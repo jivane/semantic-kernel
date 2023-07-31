@@ -20,17 +20,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '18.x'
-      - name: Install dependencies 📦
-        run: yarn install --frozen-lockfile
-        
-      - name: Install dependencies 📦
-        run: npm install -g @azure/static-web-apps-cli
-
-      - name: npm install, build, and test
-        run: |
-          cd samples/apps/copilot-chat-app/webapp
-          yarn build
-
+      - run: |
+              cd samples/apps/copilot-chat-app/webapp
+              yarn build
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
