@@ -22,6 +22,7 @@ jobs:
           node-version: '18.x'
       - run: |
               cd samples/apps/copilot-chat-app/webapp
+              yarn
               yarn build
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
