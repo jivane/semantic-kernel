@@ -25,7 +25,9 @@ jobs:
         uses: Borales/actions-yarn@v4.2.0
         with:
           # Yarn command
-          cmd: install
+          cmd: |
+              cd samples/apps/copilot-chat-app/webapp 
+              install
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:
