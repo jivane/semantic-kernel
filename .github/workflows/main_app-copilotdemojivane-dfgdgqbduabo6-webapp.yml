@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '18.x'
+      - name: Setup Yarn
+        # You may pin to the exact commit or the version.
+        # uses: mskelton/setup-yarn@2fd0f48147cbee4fd8a71723a3b86851d86ba46b
+        uses: mskelton/setup-yarn@v1.4.0     
 
       - name: npm install, build, and test
         run: |
