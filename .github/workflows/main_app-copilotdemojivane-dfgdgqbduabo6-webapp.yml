@@ -20,14 +20,22 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '18.x'
-      - run: |
+      - name: GitHub Action for Yarn
+        # You may pin to the exact commit or the version.
+        uses: Borales/actions-yarn@v4.2.0
+        with:
+          # Yarn command
+          cmd: install
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: |
               cd samples/apps/copilot-chat-app/webapp
-              yarn
               yarn build
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
+          name: front-app
           path: samples/apps/copilot-chat-app/webapp/build
 
   deploy:
