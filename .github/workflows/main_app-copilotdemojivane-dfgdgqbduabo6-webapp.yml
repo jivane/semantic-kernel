@@ -22,6 +22,9 @@ jobs:
           node-version: '18.x'
       - name: Install dependencies 📦
         run: yarn install --frozen-lockfile
+        
+      - name: Install dependencies 📦
+        run: npm install -g @azure/static-web-apps-cli
 
       - name: npm install, build, and test
         run: |
